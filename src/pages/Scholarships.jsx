@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/Scholarships.css'; // Import your CSS file
 
 const Scholarships = () => {
     const [scholarships, setScholarships] = useState([]); // All scholarships
@@ -46,45 +47,46 @@ const Scholarships = () => {
     };
 
     return (
-        <div>
+        <div className="scholarships"> 
             <h1>Scholarships</h1>
 
-            <div>
-                <label>State:</label>
-                <select value={state} onChange={(e) => setState(e.target.value)}>
-                    <option value="">Select State</option>
-                    {/* Populate with actual states */}
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Nashik">Nashik</option>
-                </select>
-            </div>
+            <div className="filter-container">
+                <div>
+                    <label htmlFor="state">State:</label>
+                    <select id="state" value={state} onChange={(e) => setState(e.target.value)}>
+                        <option value="">Select State</option>
+                        {/* Populate with actual states */} <option value="Maharashtra">Maharashtra</option>
+                        <option value="Nashik">Nashik</option>
+                    </select>
+                </div>
 
-            <div>
-                <label>Caste:</label>
-                <select value={caste} onChange={(e) => setCaste(e.target.value)}>
-                    <option value="">Select Caste</option>
-                    {/* Populate with actual castes */}
-                    <option value="General">General</option>
-                    <option value="OBC">OBC</option>
-                </select>
-            </div>
+                <div>
+                    <label htmlFor="caste">Caste:</label>
+                    <select id="caste" value={caste} onChange={(e) => setCaste(e.target.value)}>
+                        <option value="">Select Caste</option>
+                        {/* Populate with actual castes */}
+                        <option value="General">General</option>
+                        <option value="OBC">OBC</option>
+                    </select>
+                </div>
 
-            <div>
-                <label>Education:</label>
-                <select value={education} onChange={(e) => setEducation(e.target.value)}>
-                    <option value="">Select Education Level</option>
-                    {/* Populate with actual education levels */}
-                    <option value="UG/PG">UG/PG</option>
-                    <option value="Diploma">Diploma</option>
-                </select>
+                <div>
+                    <label htmlFor="education">Education:</label>
+                    <select id="education" value={education} onChange={(e) => setEducation(e.target.value)}>
+                        <option value="">Select Education Level</option>
+                        {/* Populate with actual education levels */}
+                        <option value="UG/PG">UG/PG</option>
+                        <option value="Diploma">Diploma</option>
+                    </select>
+                </div>
+                <button onClick={handleFilter}>Filter Scholarships</button>
             </div>
-            <button onClick={handleFilter}>Filter Scholarships</button>
 
             <h2>Available Scholarships</h2>
-            <ul>
+            <ul className="scholarship-list">
                 {filteredScholarships.length > 0 ? (
                     filteredScholarships.map(scholarship => (
-                        <li key={scholarship.id}>{scholarship.name}</li>
+                        <li key={scholarship.id} className="scholarship-item">{scholarship.name}</li>
                     ))
                 ) : (
                     <li>No scholarships found.</li>
