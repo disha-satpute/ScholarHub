@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Footer.css';
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 const Footer = () => {
     return (
         <footer className="footer">
@@ -26,16 +26,24 @@ const Footer = () => {
                 </div>
                 <div className="footer-section">
                     <h3>Follow Us</h3>
-                    <div className="social-icons">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    </div>
+                   <div className="social-media">
+                                           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                               <FaFacebook className="icon" /> {/* Facebook Icon */}
+                                           </a>
+                                           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                               <FaTwitter className="icon" /> {/* Twitter Icon */}
+                                           </a>
+                                           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                               <FaLinkedin className="icon" /> {/* LinkedIn Icon */}
+                                           </a>
+                                           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                               <FaInstagram className="icon" /> {/* Instagram Icon */}
+                                           </a>
+                                       </div>
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; 2023 ScholarHub. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
+                <p>&copy; 2025 ScholarHub. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
             </div>
         </footer>
     );

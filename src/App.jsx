@@ -8,6 +8,7 @@ import Scholarships from './pages/Scholarships';
 import Contact from './pages/Contact';
 import UserLogin from './pages/UserLogin';
 import AdminLogin from './pages/AdminLogin';
+import Footer from './pages/Footer';
 import './styles/App.css';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path="/user-login" element={<UserLogin />} />
                 <Route path="/admin-login" element={<AdminLogin />} />
             </Routes>
+            <Footer/>
         </>
     );
 };
