@@ -3,12 +3,18 @@ import '../styles/LandingPage.css';
 
 const LandingPage = () => {
     return (
-        <div>
+        <div className="landing-page">
+            {/* Hero Section */}
             <section className="hero">
                 <h1>Find Your Perfect Scholarship Today!</h1>
-                <input type="text" placeholder="Search by caste, state, degree..." />
-                <button>Search</button>
+                <p>Search and apply for scholarships that match your profile.</p>
+                <div>
+                    <input type="text" placeholder="Search by caste, state, degree..." />
+                    <button>Search</button>
+                </div>
             </section>
+
+            {/* Features Section */}
             <section className="features">
                 <div className="feature">
                     <h2>Wide Range of Scholarships</h2>
