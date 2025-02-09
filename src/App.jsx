@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Route, Routes } from 'react-router-dom'; // No Router import here
 import Header from './pages/Header';
 import LandingPage from './pages/LandingPage';

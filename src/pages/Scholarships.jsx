@@ -1,35 +1,48 @@
 import React, { useState, useEffect } from 'react';
 
-const Scholarship = () => {
+const Scholarships = () => {
     const [scholarships, setScholarships] = useState([]); // All scholarships
     const [filteredScholarships, setFilteredScholarships] = useState([]); // Scholarships after filtering
     const [state, setState] = useState('');
     const [caste, setCaste] = useState('');
     const [education, setEducation] = useState('');
-    const [year, setYear] = useState('');
 
-    // Sample data fetching (replace with your actual data fetching logic)
+    // Fetch scholarships from your API or database
     useEffect(() => {
-        // Fetch scholarships from your API or database
         const fetchScholarships = async () => {
-            const response = await fetch('/api/scholarships'); // Adjust the API endpoint
-            const data = await response.json();
-            setScholarships(data);
-            setFilteredScholarships(data); // Initially show all scholarships
+            try {
+                const response = await fetch('/api/scholarships'); // Adjust the API endpoint
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setScholarships(data);
+                setFilteredScholarships(data); // Initially show all scholarships
+            } catch (error) {
+                console.error('Error fetching scholarships:', error);
+            }
         };
 
         fetchScholarships();
     }, []);
-    const handleFilter = () => {
-        const filtered = scholarships.filter(scholarship => {
-            return (
-                (state ? scholarship.state === state : true) &&
-                (caste ? scholarship.caste === caste : true) &&
-                (education ? scholarship.education === education : true) &&
-                (year ? scholarship.year === year : true)
-            );
-        });
-        setFilteredScholarships(filtered);
+
+    // Function to handle filtering scholarships based on selected criteria
+    const handleFilter = async () => {
+        try {
+            const queryParams = new URLSearchParams();
+            if (state) queryParams.append('state', state);
+            if (caste) queryParams.append('caste', caste);
+            if (education) queryParams.append('education', education);
+
+            const response = await fetch(`/api/scholarships?${queryParams.toString()}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            setFilteredScholarships(data);
+        } catch (error) {
+            console.error('Error fetching scholarships:', error);
+        }
     };
 
     return (
@@ -41,8 +54,8 @@ const Scholarship = () => {
                 <select value={state} onChange={(e) => setState(e.target.value)}>
                     <option value="">Select State</option>
                     {/* Populate with actual states */}
-                    <option value="State1">State1</option>
-                    <option value="State2">State2</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Nashik">Nashik</option>
                 </select>
             </div>
 
@@ -51,8 +64,8 @@ const Scholarship = () => {
                 <select value={caste} onChange={(e) => setCaste(e.target.value)}>
                     <option value="">Select Caste</option>
                     {/* Populate with actual castes */}
-                    <option value="Caste1">Caste1</option>
-                    <option value="Caste2">Caste2</option>
+                    <option value="General">General</option>
+                    <option value="OBC">OBC</option>
                 </select>
             </div>
 
@@ -61,31 +74,24 @@ const Scholarship = () => {
                 <select value={education} onChange={(e) => setEducation(e.target.value)}>
                     <option value="">Select Education Level</option>
                     {/* Populate with actual education levels */}
-                    <option value="Undergraduate">Undergraduate</option>
-                    <option value="Postgraduate">Postgraduate</option>
+                    <option value="UG/PG">UG/PG</option>
+                    <option value="Diploma">Diploma</option>
                 </select>
             </div>
-
-            <div>
-                <label>Year:</label>
-                <select value={year} onChange={(e) => setYear(e.target.value)}>
-                    <option value="">Select Year</option>
-                    {/* Populate with actual years */}
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                </select>
-            </div>
-
             <button onClick={handleFilter}>Filter Scholarships</button>
 
             <h2>Available Scholarships</h2>
             <ul>
-                {filteredScholarships.map(scholarship => (
-                    <li key={scholarship.id}>{scholarship.name}</li>
-                ))}
+                {filteredScholarships.length > 0 ? (
+                    filteredScholarships.map(scholarship => (
+                        <li key={scholarship.id}>{scholarship.name}</li>
+                    ))
+                ) : (
+                    <li>No scholarships found.</li>
+                )}
             </ul>
         </div>
     );
 };
 
-export default Scholarship;
+export default Scholarships;
