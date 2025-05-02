@@ -1,0 +1,145 @@
+/* 🎨 Full-Page Background with Slideshow */
+.landing-page {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🎬 Slideshow Container */
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* 🖼️ Slideshow Images */
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Ensures image fits without stretching */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* 🔄 Show Active Image */
+.slideshow img.active {
+    opacity: 1;
+}
+
+/* 📌 Dark Overlay for Better Readability */
+.slideshow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1;
+}
+
+/* 🏆 Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+}
+
+/* 🔥 Glowing Animated Text */
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: navy;
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 255, 0, 0.6);
+    animation: glow 1.5s infinite alternate;
+}
+
+/* 🌟 Text Glow Animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 255, 0, 0.6);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 40px rgba(255, 255, 0, 0.9);
+    }
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color:navy;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+/* 🎯 CTA Button */
+.hero .cta-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff5733);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(255, 118, 136, 0.6);
+    width: 200px;
+}
+
+.hero .cta-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 118, 136, 0.8);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero .cta-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .cta-btn {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+}

@@ -1,0 +1,62 @@
+/* Center the language selector */
+#google_translate_element {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: 40px;
+    background-color: white;
+}
+
+/* Hide the Google branding */
+.goog-te-gadget {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Make the dropdown button look better */
+.goog-te-combo {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Hide the Google Translate banner that appears at the top */
+body > .skiptranslate {
+    display: none !important;
+}
+
+/* Ensure that the page doesn't shift when translation happens */
+body {
+    top: 0px !important;
+}
+
+/* Remove unnecessary padding */
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 5px !important;
+    font-size: 14px !important;
+}
+
+/* Hide the Google logo */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* Hide the Google Translate iframe */
+.goog-te-banner-frame {
+    display: none !important;
+}
+/* Hide Google Translate branding */
+.goog-te-gadget {
+    font-size: 0px !important;  /* Hides text */
+}
+
+.goog-te-gadget span, 
+.goog-te-gadget a {
+    display: none !important;  /* Hides "Powered by Google Translate" */
+}

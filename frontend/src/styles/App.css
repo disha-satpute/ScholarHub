@@ -1,0 +1,36 @@
+.auth-section {
+  background: #f9f9f9;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-section h2 {
+  text-align: center;
+}
+
+.auth-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-section input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.auth-section button {
+  padding: 10px;
+  background: #1a2585;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-section p {
+  text-align: center;
+}
