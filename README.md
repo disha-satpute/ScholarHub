@@ -1,3 +1,3 @@
-## 🎯Second Year Minor Project - ScholarHub
+## 🎯Second Year Minor Project - ScholarHub 
 
 
