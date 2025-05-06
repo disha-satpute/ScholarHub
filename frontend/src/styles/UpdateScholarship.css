@@ -1,0 +1,37 @@
+.update-scholarship-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.update-scholarship-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.update-scholarship-form label {
+    font-weight: bold;
+}
+
+.update-scholarship-form input,
+.update-scholarship-form textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.update-scholarship-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.update-scholarship-form button:hover {
+    background-color: #0056b3;
+}

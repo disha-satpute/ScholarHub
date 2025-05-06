@@ -74,3 +74,40 @@ a:hover {
     color: #888;
     font-size: 18px;
 }
+.admin-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.update-btn, .delete-btn, .back-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.update-btn {
+    background-color: #ffc107;
+    color: black;
+}
+
+.update-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.back-btn {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 20px;
+}

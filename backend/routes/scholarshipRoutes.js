@@ -166,19 +166,111 @@ router.delete("/saved/:user_id/:scholarship_id", async (req, res) => {
 });
 
 // 📌 Get Single Scholarship by ID
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+
     try {
-        const { id } = req.params;
-        const result = await pool.query("SELECT * FROM scholarships WHERE id = $1", [id]);
+        const result = await pool.query(`
+            SELECT 
+                s.*,
+                ARRAY(
+                    SELECT st.name
+                    FROM scholarship_states ss
+                    JOIN states st ON ss.state_id = st.id
+                    WHERE ss.scholarship_id = s.id
+                ) AS states,
+                ARRAY(
+                    SELECT c.name
+                    FROM scholarship_castes sc
+                    JOIN castes c ON sc.caste_id = c.id
+                    WHERE sc.scholarship_id = s.id
+                ) AS castes,
+                ARRAY(
+                    SELECT e.name
+                    FROM scholarship_education_levels se
+                    JOIN education_levels e ON se.education_level_id = e.id
+                    WHERE se.scholarship_id = s.id
+                ) AS education_levels
+            FROM scholarships s
+            WHERE s.id = $1
+        `, [id]);
 
         if (result.rows.length === 0) {
-            return res.status(404).json({ message: "Scholarship not found" });
+            return res.status(404).json({ message: 'Scholarship not found' });
         }
 
         res.json(result.rows[0]);
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+// 📌 update Single Scholarship by ID
+router.put("/:id", async (req, res) => {
+    const { id } = req.params;
+    const {
+        title,
+        description,
+        provider,
+        type,
+        application_steps,
+        youtube_video,
+        official_link,
+        deadline
+    } = req.body;
+
+    try {
+        const result = await pool.query(
+            `UPDATE scholarships SET 
+                title = $1,
+                description = $2,
+                provider = $3,
+                type = $4,
+                application_steps = $5,
+                youtube_video = $6,
+                official_link = $7,
+                deadline = $8
+            WHERE id = $9
+            RETURNING *`,
+            [
+                title,
+                description,
+                provider,
+                type,
+                application_steps,
+                youtube_video,
+                official_link,
+                deadline,
+                id
+            ]
+        );
+
+        if (result.rowCount === 0) {
+            return res.status(404).json({ message: "Scholarship not found" });
+        }
+
+        res.json({
+            message: "Scholarship updated successfully",
+            scholarship: result.rows[0]
+        });
     } catch (error) {
-        console.error("Error fetching scholarship:", error);
-        res.status(500).json({ message: "Internal server error" });
+        console.error("Error updating scholarship:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+});
+// DELETE a scholarship by ID
+router.delete("/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const result = await pool.query("DELETE FROM scholarships WHERE id = $1 RETURNING *", [id]);
+        if (result.rowCount === 0) {
+            return res.status(404).json({ message: "Scholarship not found" });
+        }
+        res.json({ message: "Scholarship deleted successfully" });
+    } catch (error) {
+        console.error("Error deleting scholarship:", error);
+        res.status(500).json({ message: "Server error" });
     }
 });
 

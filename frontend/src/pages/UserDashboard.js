@@ -125,7 +125,7 @@ const saveToProfile = async (scholarshipId) => {
 
     return (
         <div className="user-dashboard">
-            <h2>Scholarships</h2>
+            <h3>Filter Scholarships (select at least one filter) </h3>
 
             <div className="search-container">
                 <label>

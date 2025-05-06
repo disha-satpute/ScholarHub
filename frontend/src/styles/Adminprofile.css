@@ -1,0 +1,168 @@
+/* Admin Profile Container */
+.admin-profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px;
+    background-color: #f4f6f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Profile Header */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .profile-header p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .profile-header p strong {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Update Options */
+  .update-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .update-options button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .update-options button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #007bff;
+  }
+  
+  /* Message */
+  .message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* User List */
+  .user-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .user-list li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-list li div {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .user-list li div strong {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .user-list li div span {
+    color: #777;
+  }
+  
+  /* Profile Buttons */
+  .profile-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .profile-buttons .dash,
+  .profile-buttons .logout-btn {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .profile-buttons .dash:hover,
+  .profile-buttons .logout-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .admin-profile-container {
+      padding: 15px;
+    }
+  
+    .profile-header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .update-options {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .profile-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/ScholarshipDetails.css";
+import "../styles/Details.css";
 
-const ScholarshipDetails = () => {
+const Details = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [scholarship, setScholarship] = useState(null);
@@ -86,11 +86,35 @@ const ScholarshipDetails = () => {
                 </p>
             )}
 
-            <button onClick={() => navigate("/user-profile")} className="back-btn">
+            <button onClick={() => navigate("/admin-profile")} className="back-btn">
                 ⬅ Back to Profile
             </button>
+            <div className="admin-actions">
+            <button onClick={() => navigate(`/update-scholarship/${scholarship.id}`)}>
+        ✏️ Update
+    </button>
+    <button
+        className="delete-btn"
+        onClick={async () => {
+            const confirmDelete = window.confirm("Are you sure you want to delete this scholarship?");
+            if (confirmDelete) {
+                try {
+                    await axios.delete(`http://localhost:3000/api/scholarships/${scholarship.id}`);
+                    alert("Scholarship deleted successfully!");
+                    navigate("/admin-profile");
+                } catch (err) {
+                    console.error("Delete error:", err);
+                    alert("Failed to delete scholarship.");
+                }
+            }
+        }}
+    >
+        🗑️ Remove
+    </button>
+</div>
+
         </div>
     );
 };
 
-export default ScholarshipDetails;
+export default Details;

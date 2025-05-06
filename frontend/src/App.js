@@ -16,8 +16,10 @@ import AdminDashboard from './pages/AdminDashboard';
 import AddScholarship from './pages/AddScholarship';
 import UserDashboard from './pages/UserDashboard';
 import UserProfile from './pages/UserProfile';
-import ScholarshipDetails
- from './pages/ScholarshipDetails';
+import AdminProfile from './pages/AdminProfile';
+import ScholarshipDetails from './pages/ScholarshipDetails';
+import Details from './pages/Details';
+import UpdateScholarship from './pages/UpdateScholarship';
 function App() {
   return (
     <Router>
@@ -37,6 +39,7 @@ function App() {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-register" element={<AdminRegister />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-profile" element={<AdminProfile />} />
 
         <Route path="/scholarships" element={<Scholarships />} />
         <Route path="/contact" element={<Contact />} />
@@ -47,7 +50,10 @@ function App() {
         <Route path="/add-scholarship" element={<AddScholarship />} />
 
         <Route path="/scholarship-details/:id" element={<ScholarshipDetails />} />
-      </Routes>
+        <Route path="/scholarship-sdetails/:id" element={<Details />} />
+        <Route path="/update-scholarship/:id" element={<UpdateScholarship />} />
+
+        </Routes>
       <Footer/>
     </Router>
   );
