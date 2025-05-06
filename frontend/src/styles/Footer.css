@@ -1,95 +1,100 @@
 .footer {
-    background-color:#fff(57, 68, 104);
-    color: #000;
+    background-color: #39445d;  /* Darker background color */
+    color: #fff;
     padding: 2rem 0;
     margin-top: auto;
     width: 100%;
-}
-
-.footer-content {
+  }
+  
+  .footer-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.footer-section {
+  }
+  
+  .footer-section {
     flex: 1;
-    min-width: 200px;
+    min-width: 250px;
     margin: 1rem;
-}
-
-.footer-section h3 {
+  }
+  
+  .footer-section h3 {
     margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.footer-section p, .footer-section ul {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
+    color: #ffcc00;
+  }
+  
+  .footer-section p,
+  .footer-section ul {
+    font-size: 1rem;
     line-height: 1.6;
-}
-
-.footer-section ul {
+  }
+  
+  .footer-section ul {
     list-style: none;
     padding: 0;
-}
-
-.footer-section ul li {
+  }
+  
+  .footer-section ul li {
     margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-    color: #ecf0f1;
+  }
+  
+  .footer-section ul li a {
+    color: #d1d8e0;
     text-decoration: none;
-}
-
-.footer-section ul li a:hover {
+  }
+  
+  .footer-section ul li a:hover {
     text-decoration: underline;
-}
-
-.social-media {
+    color: #ffcc00;
+  }
+  
+  .social-media {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
-}
-
-.social-media a {
-    color: #ffffff; /* Green */
+  }
+  
+  .social-media a {
+    color: #d1d8e0; /* Lighter icons */
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-    color: #ffffff; /* Darker green */
-}
-
-.icon {
+  }
+  
+  .social-media a:hover {
+    color: #ffcc00; /* Highlight on hover */
+  }
+  
+  .icon {
     font-size: 2rem;
+    color: #fff;
     transition: transform 0.3s ease;
-}
-
-.icon:hover {
+  }
+  
+  .icon:hover {
     transform: scale(1.2); /* Slightly enlarge icons on hover */
-}
-.footer-bottom {
+  }
+  
+  .footer-bottom {
     text-align: center;
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #ffffff;
-}
-
-.footer-bottom p {
+    border-top: 1px solid #d1d8e0;
+  }
+  
+  .footer-bottom p {
     margin: 0;
     font-size: 0.9rem;
-}
-
-.footer-bottom a {
+  }
+  
+  .footer-bottom a {
     color: #ffffff;
     text-decoration: none;
-}
-
-.footer-bottom a:hover {
+  }
+  
+  .footer-bottom a:hover {
     text-decoration: underline;
-}
+  }

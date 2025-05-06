@@ -1,18 +1,14 @@
 .scholarships-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px;
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0;
+    border-radius: 0;
 }
 
-h2 {
-    font-size: 2rem;
+
+h3 {
+    font-size: 4rem;
     color: #333;
     margin-bottom: 20px;
     text-align: center;
@@ -137,3 +133,47 @@ ul {
     text-align: left;
 }
 
+.filter-prompt-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #e8efff;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+
+  .filter-prompt-section h4 {
+    color: #2a2a88;
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .filter-note {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stay-updated-msg {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2.8rem;
+  }
+  
+  .login-btn {
+    display: inline-block;
+    background-color: #2a2a88;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 17px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #b9b9ff;
+  }
+  

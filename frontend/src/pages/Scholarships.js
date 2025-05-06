@@ -33,7 +33,7 @@ const Scholarships = () => {
 
     return (
         <div className="user-dashboard">
-            <h2>Find Scholarships</h2>
+            <h3>Find Scholarships</h3>
             <div className="search-container">
                 <input
                     type="text"
@@ -83,6 +83,19 @@ const Scholarships = () => {
                     )}
                 </>
             )}
+            {/* Suggest filter by criteria */}
+<div className="filter-prompt-section">
+  <h4>Want to filter scholarships by your caste, state, or education level?</h4>
+  <p className="filter-note">Login to access personalized filters and recommendations tailored just for you!</p>
+
+  <div className="login-prompt">
+    <p className="stay-updated-msg">🔒 Stay logged in, stay updated with the latest scholarships!</p>
+    <a href="/login" className="login-btn">
+      Login to Get Started
+    </a>
+  </div>
+</div>
+
         </div>
     );
 };

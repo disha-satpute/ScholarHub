@@ -1,145 +1,292 @@
-/* 🎨 Full-Page Background with Slideshow */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* 🎞️ Slideshow */
 .landing-page {
-    font-family: 'Poppins', sans-serif;
-    color: #ffffff;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    overflow: hidden;
-    position: relative;
+  overflow-x: hidden;
 }
 
-/* 🎬 Slideshow Container */
 .slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  overflow: hidden;
 }
 
-/* 🖼️ Slideshow Images */
 .slideshow img {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover; /* Ensures image fits without stretching */
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
 }
 
-/* 🔄 Show Active Image */
 .slideshow img.active {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* 📌 Dark Overlay for Better Readability */
 .slideshow-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: white;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 /* 🏆 Hero Section */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    z-index: 3;
-}
-
-/* 🔥 Glowing Animated Text */
-.hero h1 {
-    font-size: 3.5rem;
+    padding: 14vh 2rem 5rem;
+    position: relative;
+    z-index: 1;
+    
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: navy;
-    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 255, 0, 0.6);
-    animation: glow 1.5s infinite alternate;
-}
-
-/* 🌟 Text Glow Animation */
-@keyframes glow {
-    from {
-        text-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 255, 0, 0.6);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 40px rgba(255, 255, 0, 0.9);
-    }
-}
-
-.hero p {
+    color: #380ecf;
+  }
+  
+  .hero p {
     font-size: 1.3rem;
-    font-weight: 300;
-    color:navy;
-    letter-spacing: 1px;
-    margin-top: 10px;
-}
-
-/* 🎯 CTA Button */
-.hero .cta-btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff5733);
+    margin-bottom: 2rem;
+    color: #000000;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* adjust spacing between buttons */
+    flex-wrap: wrap; /* responsive for small screens */
+  }
+  
+  .cta-btn {
+    background-color: #0026ff;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
     border: none;
     border-radius: 30px;
-    color: white;
-    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(255, 118, 136, 0.6);
-    width: 200px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background-color: #0008aa;
+  }
+  
+  
+  .cta-btn:hover {
+    background-color: #5a6cf4;
+  }
+  
+/* 📘 About Section */
+.about-section {
+    background-color: #e0eafd;
+    padding: 3rem 9rem;
+    text-align: center;
+  }
+.about-section h3{
+    font-size: 2rem;
+}
+.about-section p{
+    font-size: 1.5rem;
+}
+  .about-description {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    max-width: 1000px;
+    margin-inline: auto;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .feature-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-card strong {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+    color: #2a2a88;
+  }
+  
+  .feature-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+
+/* 🧩 Services Section */
+.services-section {
+  background-color: #eef4fb;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-.hero .cta-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(255, 118, 136, 0.8);
+.services-section h2 {
+  font-size: 2.5rem; /* Slightly larger font size */
+  color: #0505c3;
+  margin-bottom: 2rem;
 }
 
-/* 📱 Responsive Design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .hero .cta-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .hero .cta-btn {
-        font-size: 0.9rem;
-        padding: 8px 18px;
-    }
+.service-card {
+  background-color: #1502c3;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  width: 250px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
 }
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 📢 Notices Section */
+.notices-section {
+  background-color: #fff8dc;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.notices-section h2 {
+  font-size: 2.5rem; /* Larger font size for better readability */
+  color: #003366;
+  margin-bottom: 1.5rem;
+}
+
+.notices-section ul {
+  list-style: none;
+  font-size: 1.1rem; /* Increased font size */
+  line-height: 2;
+}
+
+/* 🔗 Links Section */
+.links-section {
+  background-color: #e3f2fd;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.links-section h2 {
+  font-size: 2.5rem; /* Larger font size */
+  color: #003366;
+  margin-bottom: 1.5rem;
+}
+
+.links-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-section li {
+  display: inline-block;
+  margin: 0 1.5rem; /* More spacing between links */
+}
+
+.links-section a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+  transition: text-decoration 0.3s ease;
+}
+
+.links-section a:hover {
+  text-decoration: underline;
+}
+
+/* 🧭 Footer */
+.footer {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+/* 🎞️ Slideshow */
+.landing-page {
+    overflow-x: hidden;
+  }
+  
+  .slideshow {
+    position: relative;
+    height: 60vh; /* Set the height of the slider */
+    width: 100%; /* Full width */
+    overflow: hidden;
+    border-radius: 10px; /* Optional: adds rounded corners to the slider */
+  }
+  
+  .slideshow img {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Set all images to be outside the visible area */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .slideshow img.active {
+    opacity: 1;
+    left: 0; /* Move the active image into view */
+  }
+  
+  .slideshow img.prev {
+    left: -100%; /* Move the previous image out of view */
+  }
+  
+  .slideshow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
