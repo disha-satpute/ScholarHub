@@ -62,7 +62,6 @@ const Header = () => {
                             { className: "submenu" },
                             React.createElement("li", null, React.createElement(Link, { to: "/Register", className: "submenu-item" }, "Register")),
                             React.createElement("li", null, React.createElement(Link, { to: "/Login", className: "submenu-item" }, "Login")),
-                            React.createElement("li", null, React.createElement(Link, { to: "/.", className: "submenu-item" }, ".."))
                         )
                     ),
                     React.createElement(

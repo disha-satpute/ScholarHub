@@ -40,33 +40,6 @@ const UserDashboard = () => {
             });
     }, []);
 
-  /*  const fetchScholarships = async () => {
-        setLoading(true);
-        setError(null);
-
-        try {
-            const queryParams = new URLSearchParams();
-            if (selectedState) queryParams.append("state", selectedState);
-            if (selectedCaste) queryParams.append("caste", selectedCaste);
-            if (selectedEducation) queryParams.append("education", selectedEducation);
-
-            const response = await fetch(
-                `http://localhost:3000/api/scholarships?${queryParams.toString()}`
-            );
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            setScholarships(data);
-        } catch (error) {
-            setError("Error fetching scholarships");
-        } finally {
-            setLoading(false);
-        }
-    };
-*/
 const fetchScholarships = async () => {
     setLoading(true);
     setError(null);

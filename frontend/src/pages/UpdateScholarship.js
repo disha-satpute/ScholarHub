@@ -4,7 +4,7 @@ import axios from "axios";
 import "../styles/UpdateScholarship.css";
 
 const UpdateScholarship = () => {
-    const { id } = useParams(); // Get scholarship ID from URL
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({

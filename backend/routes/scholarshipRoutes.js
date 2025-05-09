@@ -259,6 +259,42 @@ router.put("/:id", async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
+
+router.get("/search", async (req, res) => {
+    try {
+        const { keyword } = req.query;
+
+        if (!keyword) {
+            return res.status(400).json({ error: "Keyword is required" });
+        }
+
+        const searchQuery = `
+            SELECT s.*, 
+                   ARRAY_AGG(DISTINCT st.name) AS states,
+                   ARRAY_AGG(DISTINCT c.name) AS castes,
+                   ARRAY_AGG(DISTINCT e.name) AS education_levels
+            FROM scholarships s
+            LEFT JOIN scholarship_states ss ON s.id = ss.scholarship_id
+            LEFT JOIN states st ON ss.state_id = st.id
+            LEFT JOIN scholarship_castes sc ON s.id = sc.scholarship_id
+            LEFT JOIN castes c ON sc.caste_id = c.id
+            LEFT JOIN scholarship_education_levels se ON s.id = se.scholarship_id
+            LEFT JOIN education_levels e ON se.education_level_id = e.id
+            WHERE LOWER(s.title) LIKE $1 OR LOWER(s.description) LIKE $1
+            GROUP BY s.id
+            ORDER BY s.deadline ASC
+        `;
+
+        const values = [`%${keyword.toLowerCase()}%`];
+
+        const result = await pool.query(searchQuery, values);
+        res.json(result.rows);
+    } catch (error) {
+        console.error("Error searching scholarships:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
 // DELETE a scholarship by ID
 router.delete("/:id", async (req, res) => {
     const { id } = req.params;

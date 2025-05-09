@@ -18,7 +18,7 @@ const Contact = () => {
                 <div className="contact-info">
                     <h2>Contact Information</h2>
                     <p>Email: support@scholarhub.com</p>
-                    <p>Phone: +1 234 567 890</p>
+                    <p>Phone: +917666648045</p>
                     <p>Operating Hours: Mon-Fri, 9 AM - 5 PM</p>
                     <div className="social-media">
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
