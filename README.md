@@ -2,6 +2,8 @@
 
 ### Title: ScholarHub – Student Scholarship Discovery & Management System
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 📄PROBLEM STATEMENT -
 -
 To develop a full-stack web application that allows students to discover, filter, save, and apply for scholarships based on various criteria, while enabling admins to manage Scholarships and users.
