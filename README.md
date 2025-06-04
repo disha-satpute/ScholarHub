@@ -2,27 +2,27 @@
 
 ### Title: ScholarHub – Student Scholarship Discovery & Management System
 
-📄Problem Statement -
+📄PROBLEM STATEMENT -
 -
 To develop a full-stack web application that allows students to discover, filter, save, and apply for scholarships based on various criteria, while enabling admins to manage Scholarships and users.
 
 🧑‍💻 TECHNOLOGY USED -
 -
-Frontend: React.js
-Backend: Node.js + Express.js
-Database: PostgreSQL
-Authentication: JWT
-Styling: HTML, CSS, Bootstrap 
-State Management: React Hooks
-Other Tools: VS Code, Postman
+- Frontend: React.js
+- Backend: Node.js + Express.js
+- Database: PostgreSQL
+- Authentication: JWT
+- Styling: HTML, CSS, Bootstrap 
+- State Management: React Hooks
+- Other Tools: VS Code, Postman
 
 🎯 OBJECTIVES -
 -
-To make scholarship discovery easy, personalized, and accessible to students.
-To allow filtered search based on state, caste, and education level.
-To enable users to save scholarships to their profile for later access.
-To give admins control over managing scholarships, users.
-To integrate a dynamic, profile-based UI for better engagement.
+- To make scholarship discovery easy, personalized, and accessible to students.
+- To allow filtered search based on state, caste, and education level.
+- To enable users to save scholarships to their profile for later access.
+- To give admins control over managing scholarships, users.
+- To integrate a dynamic, profile-based UI for better engagement.
 
 ✅ CONCLUSION -
 -
