@@ -67,7 +67,7 @@ const AdminDashboard = () => {
             >
                 Admin Profile
             </button>
-            <h3>Scholarship Management (add scholarships or search by keyword)</h3>
+            <h1>Scholarship Management (add scholarships or search by keyword)</h1>
 
             <div className="search-container">
                 <input

@@ -26,6 +26,35 @@ To develop a full-stack web application that allows students to discover, filter
 - To give admins control over managing scholarships, users.
 - To integrate a dynamic, profile-based UI for better engagement.
 
+🖼️ Website Screenshots -
+
+#### 🔎 Home page
+![Homepage](./website-img/home.png)
+
+#### 🔎 Login page
+![Loginpage](./website-img/login.png)
+
+#### 👤 User Profile Page
+![User Profile](./website-img/user-profile.png)
+
+#### 🧾 Scholarship Details Page
+![Scholarship Details](./website-img/scholarship-details.png)
+
+#### 📋 keyword Search
+![keyword](./website-img/by%20keyword.png)
+
+#### 📋 Filtered Search
+![Filters](./website-img/filter.png)
+
+#### 👤 Admin Profile
+![Admin Profile](./website-img/admin.png)
+
+#### 👤 Admin Dashboard
+![Dashboard](./website-img/admin-dashboard.png)
+
+#### 👤 Add Scholarship
+![form](./website-img/add-form.png)
+
 ✅ CONCLUSION -
 -
 ScholarHub addresses a major gap in centralized scholarship discovery. With an intuitive UI, smart filters and give information about all types of scholarships(Government,Private,NGO-based,Fellowships) it empowers students to make informed decisions and allows organization to promote transparency. It can significantly enhance awareness and access to financial aid.
