@@ -30,7 +30,11 @@ To develop a full-stack web application that allows students to discover, filter
 -
 ScholarHub addresses a major gap in centralized scholarship discovery. With an intuitive UI, smart filters and give information about all types of scholarships(Government,Private,NGO-based,Fellowships) it empowers students to make informed decisions and allows organization to promote transparency. It can significantly enhance awareness and access to financial aid.
 
-🖼️ WEBSITE SCREENSHOTS -
+📈 ScholarHub Workflow Diagram -
+-
+🚀 [![View Workflow](https://img.shields.io/badge/View%20Workflow-Diagram-blue?style=for-the-badge&logo=git&logoColor=white)](https://gitdiagram.com/disha-satpute/scholarhub)
+
+🖼️ Website Screenshots -
 -
 #### 🔎 Home page
 ![Homepage](./website-img/home.png)
