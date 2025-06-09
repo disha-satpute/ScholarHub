@@ -33,10 +33,10 @@ ScholarHub addresses a major gap in centralized scholarship discovery. With an i
 📈 ScholarHub Workflow Diagram -
 -
 
-🌟 Want to understand how ScholarHub works behind the scenes?
+🚀 Want to understand how ScholarHub works behind the scenes?
 Check out the full **System Workflow Diagram** below:
 
-➡️ [🚀 Click to Open Diagram](https://gitdiagram.com/disha-satpute/scholarhub)
+➡️ [Click to Open Diagram](https://gitdiagram.com/disha-satpute/scholarhub)
 
 
 🖼️ Website Screenshots -
