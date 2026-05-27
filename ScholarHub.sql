@@ -126,7 +126,7 @@ INSERT INTO education_levels (name) VALUES
 
 
 
-/* Create Junction Tables for Many-to-Many Relations */
+/* Create Tables for Many-to-Many Relations */
 CREATE TABLE scholarship_states (
     scholarship_id INT REFERENCES scholarships(id) ON DELETE CASCADE,
     state_id INT REFERENCES states(id) ON DELETE CASCADE,

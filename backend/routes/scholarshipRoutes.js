@@ -1,19 +1,17 @@
 const express = require("express");
 const pool = require("../config/db");
 
-
 const router = express.Router();
 
 
-
-// 📌 Add Scholarship Route (✅ Fixed Multi-Select + Image Upload)
+//  Add Scholarship Route ( Fixed Multi-Select )
 router.post("/", async (req, res) => {
     try {
         const { title, description, provider, type, youtube_video, official_link, deadline } = req.body;
         const states = req.body.state_ids || [];
         const castes = req.body.caste_ids || [];
         const education_levels = req.body.education_level_ids || [];
-        const application_steps = JSON.parse(req.body.application_steps || "[]"); // Ensure it's an array
+        const application_steps = JSON.parse(req.body.application_steps || "[]"); 
 
         // Insert Scholarship
         const result = await pool.query(
@@ -38,7 +36,7 @@ router.post("/", async (req, res) => {
 });
 
 
-// 📌 Get Scholarships with Filters (✅ Supports Partial Filtering)
+//  Get Scholarships with Filters ( Supports Partial Filtering )
 router.get("/", async (req, res) => {
     try {
         const { stateId, casteId, educationLevelId } = req.query;
@@ -71,8 +69,7 @@ router.get("/", async (req, res) => {
             params.push(parseInt(educationLevelId));
             query += ` AND e.id = $${params.length}`;
         }
-        
-        
+
 
         query += " GROUP BY s.id";
 
@@ -84,7 +81,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// 📌 Get States
+//  Get States
 router.get("/states", async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM states ORDER BY name ASC");
@@ -95,7 +92,7 @@ router.get("/states", async (req, res) => {
     }
 });
 
-// 📌 Get Castes
+//  Get Castes
 router.get("/castes", async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM castes ORDER BY name ASC");
@@ -106,7 +103,7 @@ router.get("/castes", async (req, res) => {
     }
 });
 
-// 📌 Get Education Levels
+//  Get Education Levels
 router.get("/education_levels", async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM education_levels ORDER BY name ASC");
@@ -117,7 +114,7 @@ router.get("/education_levels", async (req, res) => {
     }
 });
 
-// 📌 Delete Scholarship
+//  Delete Scholarship
 router.delete("/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -136,7 +133,7 @@ router.post("/api/scholarships", (req, res) => {
 
 
 
-// 📌 Get Saved Scholarships for a User
+//  Get Saved Scholarships for a User
 router.get("/saved/:user_id", async (req, res) => {
     try {
         const { user_id } = req.params;
@@ -165,13 +162,13 @@ router.delete("/saved/:user_id/:scholarship_id", async (req, res) => {
     }
 });
 
-// 📌 Get Single Scholarship by ID
+//  Get Single Scholarship by ID
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
 
     try {
         const result = await pool.query(`
-            SELECT 
+            SELECT
                 s.*,
                 ARRAY(
                     SELECT st.name
@@ -206,7 +203,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 });
-// 📌 update Single Scholarship by ID
+// update Single Scholarship by ID
 router.put("/:id", async (req, res) => {
     const { id } = req.params;
     const {
@@ -309,7 +306,5 @@ router.delete("/:id", async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
-
-
 
 module.exports = router;
