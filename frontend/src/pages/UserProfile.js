@@ -104,7 +104,7 @@ const UserProfile = () => {
     // ✅ Handle unsave
     const handleUnsaveScholarship = async (scholarshipId) => {
         try {
-            const res = await axios.delete(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/saved/${user.id}/${scholarshipId}`);
+            await axios.delete(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/saved/${user.id}/${scholarshipId}`);
             setSavedScholarships(prev => prev.filter(s => s.id !== scholarshipId));
             setMessage("Scholarship removed from saved list.");
         } catch (error) {
