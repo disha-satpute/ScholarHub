@@ -11,7 +11,7 @@ const AdminDashboard = () => {
 
     // Fetch all scholarships
     const fetchAllScholarships = () => {
-        axios.get("http://localhost:3000/api/scholarships")
+        axios.get("https://scholarhub-backend-5jwu.onrender.com/api/scholarships")
             .then((res) => {
                 setScholarships(res.data);
             })
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
             return;
         }
 
-        axios.get(`http://localhost:3000/api/scholarships?search=${searchKeyword}`)
+        axios.get(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships?search=${searchKeyword}`)
             .then((res) => {
                 const filteredResults = res.data.filter(s =>
                     s.title.toLowerCase().includes(searchKeyword.toLowerCase())
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
     // Delete scholarship
     const deleteScholarship = (id) => {
         if (window.confirm("Are you sure you want to delete this scholarship?")) {
-            axios.delete(`http://localhost:3000/api/scholarships/${id}`)
+            axios.delete(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/${id}`)
                 .then(() => {
                     setScholarships(prev => prev.filter(s => s.id !== id));
                     alert("Scholarship deleted successfully.");

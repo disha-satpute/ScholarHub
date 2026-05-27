@@ -29,7 +29,7 @@ const UserProfile = () => {
             }
 
             try {
-                const res = await axios.get("http://localhost:3000/api/auth/profile", {
+                const res = await axios.get("https://scholarhub-backend-5jwu.onrender.com/api/auth/profile", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setUser(res.data);
@@ -49,7 +49,7 @@ const UserProfile = () => {
                 const token = localStorage.getItem("userToken");
                 if (!token || !user?.id) return;
 
-                const res = await axios.get(`http://localhost:3000/api/scholarships/saved/${user.id}`);
+                const res = await axios.get(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/saved/${user.id}`);
                 setSavedScholarships(res.data);
             } catch (error) {
                 console.error("Failed to load saved scholarships", error);
@@ -83,7 +83,7 @@ const UserProfile = () => {
         }
 
         try {
-            const res = await axios.put(`http://localhost:3000/api/auth${endpoint}`, data, {
+            const res = await axios.put(`https://scholarhub-backend-5jwu.onrender.com/api/auth${endpoint}`, data, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("userToken")}` }
             });
 
@@ -104,7 +104,7 @@ const UserProfile = () => {
     // ✅ Handle unsave
     const handleUnsaveScholarship = async (scholarshipId) => {
         try {
-            const res = await axios.delete(`http://localhost:3000/api/scholarships/saved/${user.id}/${scholarshipId}`);
+            const res = await axios.delete(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/saved/${user.id}/${scholarshipId}`);
             setSavedScholarships(prev => prev.filter(s => s.id !== scholarshipId));
             setMessage("Scholarship removed from saved list.");
         } catch (error) {

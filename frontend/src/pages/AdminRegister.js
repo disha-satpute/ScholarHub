@@ -21,7 +21,7 @@ const AdminRegister = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:3000/api/admin/register", formData);
+            const res = await axios.post("https://scholarhub-backend-5jwu.onrender.com/api/admin/register", formData);
 
             if (res.status === 201) {
                 alert("Admin Registered Successfully!");

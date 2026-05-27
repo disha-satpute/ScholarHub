@@ -29,7 +29,7 @@ const AdminProfile = () => {
             }
 
             try {
-                const res = await axios.get("http://localhost:3000/api/admin/profile", {
+                const res = await axios.get("https://scholarhub-backend-5jwu.onrender.com/api/admin/profile", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setAdmin(res.data.admin);
@@ -52,7 +52,7 @@ const AdminProfile = () => {
             }
 
             try {
-                const res = await axios.get("http://localhost:3000/api/admin/users", {
+                const res = await axios.get("https://scholarhub-backend-5jwu.onrender.com/api/admin/users", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setUserList(res.data);
@@ -87,7 +87,7 @@ const AdminProfile = () => {
         }
 
         try {
-            const res = await axios.put(`http://localhost:3000/api/admin${endpoint}`, data, {
+            const res = await axios.put(`https://scholarhub-backend-5jwu.onrender.com/api/admin${endpoint}`, data, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` }
             });
 

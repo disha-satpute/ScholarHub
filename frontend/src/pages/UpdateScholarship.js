@@ -22,7 +22,7 @@ const UpdateScholarship = () => {
 
     // Fetch scholarship details
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/scholarships/${id}`)
+        axios.get(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/${id}`)
             .then((res) => {
                 const scholarship = res.data;
                 setFormData({
@@ -53,7 +53,7 @@ const UpdateScholarship = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:3000/api/scholarships/${id}`, formData)
+        axios.put(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/${id}`, formData)
             .then(() => {
                 alert("Scholarship updated successfully.");
                 navigate("/admin-dashboard"); // Redirect to AdminDashboard

@@ -12,7 +12,7 @@ const ScholarshipDetails = () => {
     useEffect(() => {
         const fetchScholarship = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/api/scholarships/${id}`);
+                const res = await axios.get(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships/${id}`);
                 setScholarship(res.data);
             } catch (err) {
                 console.error(err);

@@ -15,7 +15,7 @@ const Scholarships = () => {
 
         setSearchClicked(true); // Mark that search was triggered
 
-        axios.get(`http://localhost:3000/api/scholarships?search=${searchKeyword}`)
+        axios.get(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships?search=${searchKeyword}`)
             .then((res) => {
                 console.log("API Response:", res.data);
 

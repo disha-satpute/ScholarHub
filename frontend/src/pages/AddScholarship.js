@@ -24,15 +24,15 @@ const AddScholarship = () => {
     const [steps, setSteps] = useState([""]);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/scholarships/states")
+        axios.get("https://scholarhub-backend-5jwu.onrender.com/api/scholarships/states")
             .then((res) => setAllStates(res.data))
             .catch((err) => console.error("Error fetching states:", err));
 
-        axios.get("http://localhost:3000/api/scholarships/castes")
+        axios.get("https://scholarhub-backend-5jwu.onrender.com/api/scholarships/castes")
             .then((res) => setAllCastes(res.data))
             .catch((err) => console.error("Error fetching castes:", err));
 
-        axios.get("http://localhost:3000/api/scholarships/education_levels")
+        axios.get("https://scholarhub-backend-5jwu.onrender.com/api/scholarships/education_levels")
             .then((res) => setAllEducationLevels(res.data))
             .catch((err) => console.error("Error fetching education levels:", err));
     }, []);
@@ -63,7 +63,7 @@ const AddScholarship = () => {
         };
 
         try {
-            await axios.post("http://localhost:3000/api/scholarships", formData, {
+            await axios.post("https://scholarhub-backend-5jwu.onrender.com/api/scholarships", formData, {
                 headers: { "Content-Type": "application/json" },
             });
             alert("Scholarship added successfully!");

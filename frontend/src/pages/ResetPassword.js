@@ -11,7 +11,7 @@ function ResetPassword() {
     e.preventDefault();
 
     try {
-        await axios.post(`http://localhost:3000/api/auth/reset-password/${token}`, { password });
+        await axios.post(`https://scholarhub-backend-5jwu.onrender.com/api/auth/reset-password/${token}`, { password });
       alert('Password reset successful!');
       navigate('/login');
     } catch (error) {

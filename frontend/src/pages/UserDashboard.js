@@ -18,9 +18,9 @@ const UserDashboard = () => {
 
         // Fetch states, castes, and education levels
         Promise.all([
-            fetch("http://localhost:3000/api/scholarships/states"),
-            fetch("http://localhost:3000/api/scholarships/castes"),
-            fetch("http://localhost:3000/api/scholarships/education_levels"),
+            fetch("https://scholarhub-backend-5jwu.onrender.com/api/scholarships/states"),
+            fetch("https://scholarhub-backend-5jwu.onrender.com/api/scholarships/castes"),
+            fetch("https://scholarhub-backend-5jwu.onrender.com/api/scholarships/education_levels"),
         ])
             .then(async ([statesRes, castesRes, educationLevelsRes]) => {
                 if (!statesRes.ok || !castesRes.ok || !educationLevelsRes.ok) {
@@ -57,7 +57,7 @@ const fetchScholarships = async () => {
         if (selectedCaste) queryParams.append("casteId", selectedCaste);
         if (selectedEducation) queryParams.append("educationLevelId", selectedEducation);
 
-        const response = await fetch(`http://localhost:3000/api/scholarships?${queryParams.toString()}`);
+        const response = await fetch(`https://scholarhub-backend-5jwu.onrender.com/api/scholarships?${queryParams.toString()}`);
 
         if (!response.ok) {
             throw new Error("Error fetching scholarships");
@@ -75,7 +75,7 @@ const fetchScholarships = async () => {
 const saveToProfile = async (scholarshipId) => {
     try {
         const token = localStorage.getItem("userToken");
-        const response = await fetch("http://localhost:3000/api/auth/save-scholarship", {
+        const response = await fetch("https://scholarhub-backend-5jwu.onrender.com/api/auth/save-scholarship", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

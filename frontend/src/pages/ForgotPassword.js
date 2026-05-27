@@ -9,7 +9,7 @@ function ForgotPassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/auth/forgot-password', { email });
+      await axios.post('https://scholarhub-backend-5jwu.onrender.com/api/auth/forgot-password', { email });
       setMessage('Password reset instructions sent to your email.');
     } catch (error) {
       setMessage('Error sending reset instructions. Please try again.');
