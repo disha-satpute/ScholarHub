@@ -7,7 +7,7 @@
     },
     "backend": {
       "root": "backend",
-      "runtime": "nodejs",
+      "framework": "other",
       "entrypoint": "server.js",
       "routePrefix": "/api"
     }
