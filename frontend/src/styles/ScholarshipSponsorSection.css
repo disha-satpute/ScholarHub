@@ -1,0 +1,56 @@
+.sponsor-section {
+  background: #eef4fb;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.sponsor-section-header {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.sponsor-section-eyebrow {
+  display: inline-block;
+  background: #ffffff;
+  color: #007bff;
+  border: 1px solid #cfe0fb;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.sponsor-section-title {
+  font-size: 2.5rem;
+  color: #0505c3;
+  margin: 0 0 12px;
+}
+
+.sponsor-section-desc {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sponsor-section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .sponsor-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .sponsor-section-title {
+    font-size: 1.9rem;
+  }
+}

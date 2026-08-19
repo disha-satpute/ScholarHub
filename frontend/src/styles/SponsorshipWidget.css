@@ -1,0 +1,237 @@
+.sponsorship-widget {
+  background: #ffffff;
+  border: 1px solid #e3e8f0;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  position: sticky;
+  top: 90px;
+}
+
+.sponsorship-widget-eyebrow {
+  color: #007bff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.sponsorship-widget-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0 0 8px;
+}
+
+.sponsorship-widget-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.sponsorship-funding {
+  border-top: 1px solid #eef1f6;
+  padding-top: 12px;
+}
+
+.sponsorship-funding-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.sponsorship-funding-row strong {
+  color: #2c3e50;
+}
+
+.sponsorship-progress {
+  height: 10px;
+  background: #e9eef5;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 14px 0 6px;
+}
+
+.sponsorship-progress-bar {
+  height: 100%;
+  background: #007bff;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.sponsorship-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.sponsorship-progress-label strong {
+  color: #007bff;
+}
+
+.sponsorship-field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+.preset-amount-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.preset-amount-btn {
+  padding: 10px 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.preset-amount-btn:hover {
+  border-color: #007bff;
+  color: #007bff;
+  background: #f0f6ff;
+  transform: translateY(-1px);
+}
+
+.preset-amount-btn.selected {
+  background: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.preset-amount-btn.selected:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+
+.preset-amount-btn:focus-visible,
+.sponsor-submit-btn:focus-visible,
+.custom-amount-input:focus-visible {
+  outline: 3px solid rgba(0, 123, 255, 0.4);
+  outline-offset: 2px;
+}
+
+.preset-check {
+  font-weight: 700;
+}
+
+.custom-amount-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-bottom: 18px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-amount-wrap:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.custom-amount-prefix {
+  padding-left: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.custom-amount-input {
+  width: 100%;
+  border: none;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: #333;
+  background: transparent;
+}
+
+.sponsorship-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f6ff;
+  border: 1px solid #dbe7fb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.sponsorship-total strong {
+  font-size: 1.3rem;
+  color: #0026ff;
+}
+
+.sponsor-submit-btn {
+  width: 100%;
+  padding: 14px 18px;
+  background: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.sponsor-submit-btn:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.sponsor-submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.sponsor-submit-btn:disabled {
+  background: #a9c7e8;
+  cursor: not-allowed;
+}
+
+.sponsorship-payment-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #888;
+  margin: 10px 0 0;
+}
+
+.sponsorship-notice {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #fff8dc;
+  border: 1px solid #f0e0a0;
+  border-radius: 8px;
+  color: #5a4a00;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .preset-amount-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsorship-widget {
+    position: static;
+  }
+}

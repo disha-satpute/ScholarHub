@@ -3,6 +3,8 @@ const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const scholarshipRoutes = require('./routes/scholarshipRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
+
 const path = require("path");
 require('dotenv').config();
 const db = require('./config/db');
@@ -17,7 +19,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/scholarships', scholarshipRoutes);
 app.use("/api/admin", adminRoutes);
-
+app.use('/api/payments', paymentRoutes);
 
 app.get('/', (req, res) => {
   res.send('ScholarHub API is running...');

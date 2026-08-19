@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import ScholarshipSponsorSection from "../components/ScholarshipSponsorSection";
 import "../styles/LandingPage.css";
 
 const images = [
@@ -93,6 +94,9 @@ const LandingPage = () => {
           <div className="service-card">Reports</div>
         </div>
       </section>
+
+      {/* 💙 Sponsor a Scholarship Section */}
+      <ScholarshipSponsorSection />
 
       {/* 📢 Notices Section */}
       <section className="notices-section slide-up">

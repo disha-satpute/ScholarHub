@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import SponsorshipWidget from "../components/SponsorshipWidget";
 import "../styles/ScholarshipDetails.css";
 
 const ScholarshipDetails = () => {
@@ -26,7 +27,8 @@ const ScholarshipDetails = () => {
     if (!scholarship) return <p className="loading">Loading scholarship details...</p>;
 
     return (
-        <div className="details-container">
+        <div className="details-page">
+            <div className="details-container">
             <h2>{scholarship.title}</h2>
             <p><strong>Description:</strong> {scholarship.description}</p>
             <p><strong>Provider:</strong> {scholarship.provider}</p>
@@ -89,6 +91,9 @@ const ScholarshipDetails = () => {
             <button onClick={() => navigate("/user-profile")} className="back-btn">
                 ⬅ Back to Profile
             </button>
+            </div>
+
+            <SponsorshipWidget scholarship={scholarship} />
         </div>
     );
 };

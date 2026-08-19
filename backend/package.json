@@ -19,6 +19,7 @@
     "nodemailer": "^6.10.0",
     "pg": "^8.14.1",
     "pg-hstore": "^2.3.4",
+    "razorpay": "^2.9.8",
     "react-icons": "^5.5.0",
     "sequelize": "^6.37.6"
   },

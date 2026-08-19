@@ -1,3 +1,18 @@
+.details-page {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 30px;
+    align-items: start;
+}
+
+.details-page .details-container {
+    max-width: 100%;
+    margin: 0;
+}
+
 .details-container {
     max-width: 800px;
     margin: 70px auto;
@@ -73,4 +88,10 @@ a:hover {
     text-align: center;
     color: #888;
     font-size: 18px;
+}
+
+@media (max-width: 900px) {
+    .details-page {
+        grid-template-columns: 1fr;
+    }
 }
